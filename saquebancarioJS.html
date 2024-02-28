@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SAQUE BANCÁRIO </title>
+</head>
+<body>
+    <form>
+        <p> Saldo: <input type="number" id="saldo" readonly placeholder="2000"> </p>
+        <p> Saque: <input type="number" id="valor"> </p>
+        <button type="button" onclick="obterDados()"> SACAR </button>
+    </form>
+    <script>
+        function obterDados(){
+        let saldo = parseFloat(document.getElementById("saldo").value);
+        let saque = parseFloat(document.getElementById("valor").value);
+        document.getElementById("saldo").value = 2000;
+        let result = 2000 - saque;
+        if(result>0){
+            document.getElementById("saldo").value = 2000 - saque;
+            alert("Saque permitido!")
+        }else{
+            alert("Saque não permitido!")
+        }  
+    }
+    </script>
+</body>
+</html>
